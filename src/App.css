@@ -310,6 +310,9 @@ select {
   list-style: none;
   padding: 0;
   margin: 0;
+  background-color: hsl(var(--clr-light) / 0.25);
+  padding-inline: var(--py, 3rem);
+  backdrop-filter: blur(8px);
 }
 
 .primary-navigation a {
@@ -380,4 +383,20 @@ select {
   border-color: hsl(var(--clr-white));
   color: hsl(var(--clr-dark));
   background-color: hsl(var(--clr-white));
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.logo {
+  width: 48px;
+  aspect-ratio: 1;
+  margin-inline-start: 2rem;
+}
+
+.primary-header > button {
+  display: none;
 }
