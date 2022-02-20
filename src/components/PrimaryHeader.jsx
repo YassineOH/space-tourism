@@ -4,6 +4,15 @@ import close from "../assets/shared/icon-close.svg";
 import menu from "../assets/shared/icon-hamburger.svg";
 import PrimaryNav from "./PrimaryNav";
 
+const navMobilePosition = (check) => {
+  const nav = document.querySelector("nav ul");
+  if (check) {
+    nav.setAttribute("data-visible", "true");
+  } else {
+    nav.setAttribute("data-visible", "false");
+  }
+};
+
 function PrimaryHeader() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -12,11 +21,18 @@ function PrimaryHeader() {
       <div>
         <img src={logo} alt="logo" className="logo" />
       </div>
-      <button oncClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <button
+        className="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        onClick={() => {
+          setIsMenuOpen((isMenuOpen) => !isMenuOpen);
+          navMobilePosition(!isMenuOpen);
+        }}
+      >
         {isMenuOpen ? (
           <img src={close} alt="close" />
         ) : (
-          <img src={menu} alt="open" />
+          <img src={menu} alt="menu" />
         )}
       </button>
       <PrimaryNav />

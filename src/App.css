@@ -31,6 +31,29 @@
   --ff-sans-normal: "Barlow", sans-serif;
 }
 
+@media (max-width: 992px) {
+  :root {
+    /* font-sizes */
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    /* font-sizes */
+    --fs-900: 5rem;
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 0.9375rem;
+  }
+}
+
 /* -------------------------------- */
 /* Reset                            */
 /* -------------------------------- */
@@ -273,9 +296,11 @@ select {
 
 .large-button {
   position: relative;
+  cursor: pointer;
   display: grid;
   padding: 0 2em;
   z-index: 1;
+  width: 274px;
   aspect-ratio: 1;
   place-items: center;
   border-radius: 50%;
@@ -310,7 +335,7 @@ select {
   list-style: none;
   padding: 0;
   margin: 0;
-  background-color: hsl(var(--clr-light) / 0.25);
+  background-color: hsl(var(--clr-light) / 0.15);
   padding-inline: var(--py, 3rem);
   backdrop-filter: blur(8px);
 }
@@ -388,7 +413,6 @@ select {
 .primary-header {
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
 }
 
 .logo {
@@ -397,6 +421,81 @@ select {
   margin-inline-start: 2rem;
 }
 
-.primary-header > button {
+.mobile-nav-toggle {
   display: none;
+}
+
+.primary-header::after {
+  order: 1;
+  content: "";
+  position: relative;
+  height: 1px;
+  width: 90%;
+  transform: translateX(5%);
+  background-color: hsl(var(--clr-white) / 0.45);
+  z-index: 1000;
+}
+
+.primary-header nav {
+  order: 2;
+}
+
+/* ---------------------- */
+/* media quereis */
+/* ---------------------- */
+
+@media (max-width: 992px) {
+  .primary-header::after {
+    display: none;
+  }
+
+  .primary-navigation {
+    --gap: 3.5rem;
+  }
+
+  .primary-navigation a > span {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2000;
+    cursor: pointer;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    border: 0;
+  }
+
+  .primary-navigation {
+    --underline-gap: 0.5rem;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0);
+  }
+
+  .underline-indicators :where(*:hover, *:focus),
+  .underline-indicators > .active,
+  .underline-indicators > [aria-selected="true"] {
+    border-bottom: 0;
+  }
+
+  .logo {
+    margin-top: 1rem;
+  }
 }

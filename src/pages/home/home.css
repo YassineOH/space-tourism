@@ -1,0 +1,46 @@
+.home {
+  padding-top: 1rem;
+  min-height: 100vh;
+  background-image: url(../../assets/home/background-home-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.home > .grid__container {
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  min-height: 80vh;
+}
+
+.grid__container > * {
+  margin-inline: auto;
+  align-items: center;
+}
+
+.grid__container .content {
+  text-align: justify;
+  width: 50%;
+}
+
+@media (max-width: 992px) {
+  .home {
+    padding-top: 0;
+    background-image: url(../../assets/home/background-home-tablet.jpg);
+  }
+  .home > .grid__container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid__container .content {
+    text-align: center;
+    width: 60%;
+  }
+}
+
+@media (max-width: 576px) {
+  .home {
+    background-image: url(../../assets/home/background-home-mobile.jpg);
+  }
+}
