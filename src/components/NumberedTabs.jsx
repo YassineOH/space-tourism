@@ -5,15 +5,15 @@ function NumberedTabs({ changeTechnology }) {
     const parent = e.target.parentNode;
     const children = parent.querySelectorAll("* > *");
     Array.from(children).map((child) =>
-      child.setAttribute("aria-selected", "false")
+      child.setAttribute("data-selected", "false")
     );
-    e.target.setAttribute("aria-selected", "true");
+    e.target.setAttribute("data-selected", "true");
   };
 
   return (
     <div className="numbered-indicators ff-serif fs-600 flex">
       <button
-        aria-selected="true"
+        data-selected="true"
         id="0"
         onClick={(e) => {
           changeActive(e);
@@ -23,7 +23,7 @@ function NumberedTabs({ changeTechnology }) {
         1
       </button>
       <button
-        aria-selected="false"
+        data-selected="false"
         id="1"
         onClick={(e) => {
           changeActive(e);
@@ -33,7 +33,7 @@ function NumberedTabs({ changeTechnology }) {
         2
       </button>
       <button
-        aria-selected="false"
+        data-selected="false"
         id="2"
         onClick={(e) => {
           changeActive(e);

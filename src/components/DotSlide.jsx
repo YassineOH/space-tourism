@@ -5,15 +5,15 @@ function DotSlide({ changeCrewMembre }) {
     const parent = e.target.parentNode;
     const children = parent.querySelectorAll("* > *");
     Array.from(children).map((child) =>
-      child.setAttribute("aria-selected", "false")
+      child.setAttribute("data-selected", "false")
     );
-    e.target.setAttribute("aria-selected", "true");
+    e.target.setAttribute("data-selected", "true");
   };
 
   return (
     <div className="dot-indicators flex">
       <button
-        aria-selected="true"
+        data-selected="true"
         id="0"
         onClick={(e) => {
           changeActive(e);
@@ -23,7 +23,7 @@ function DotSlide({ changeCrewMembre }) {
         <span className="sr-only">slide</span>
       </button>
       <button
-        aria-selected="false"
+        data-selected="false"
         id="1"
         onClick={(e) => {
           changeActive(e);
@@ -33,7 +33,7 @@ function DotSlide({ changeCrewMembre }) {
         <span className="sr-only">slide</span>
       </button>
       <button
-        aria-selected="false"
+        data-selected="false"
         id="2"
         onClick={(e) => {
           changeActive(e);
@@ -43,7 +43,7 @@ function DotSlide({ changeCrewMembre }) {
         <span className="sr-only">slide</span>
       </button>
       <button
-        aria-selected="false"
+        data-selected="false"
         id="3"
         onClick={(e) => {
           changeActive(e);
