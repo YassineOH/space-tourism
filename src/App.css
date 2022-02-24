@@ -365,7 +365,7 @@ select {
 }
 
 .underline-indicators > .active,
-.underline-indicators > [aria-selected="true"] {
+.underline-indicators > [data-selected="true"] {
   color: hsl(var(--clr-white));
   border-color: hsl(var(--clr-white) / 1);
 }
@@ -383,7 +383,7 @@ select {
   background-color: hsl(var(--clr-white) / 0.25);
 }
 
-.dot-indicators > [aria-selected="true"] {
+.dot-indicators > [data-selected="true"] {
   background-color: hsl(var(--clr-white) / 1);
 }
 
@@ -411,7 +411,7 @@ select {
   border-color: hsl(var(--clr-white) / 1);
 }
 
-.numbered-indicators > [aria-selected="true"] {
+.numbered-indicators > [data-selected="true"] {
   border-color: hsl(var(--clr-white));
   color: hsl(var(--clr-dark));
   background-color: hsl(var(--clr-white));
@@ -515,7 +515,7 @@ select {
 
   .underline-indicators :where(*:hover, *:focus),
   .underline-indicators > .active,
-  .underline-indicators > [aria-selected="true"] {
+  .underline-indicators > [data-selected="true"] {
     border-bottom: 0;
   }
 

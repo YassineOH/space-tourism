@@ -1,6 +1,7 @@
 import React from "react";
 import PrimaryHeader from "../../components/PrimaryHeader";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -19,9 +20,12 @@ function Home() {
             world experience!{" "}
           </p>
         </div>
-        <a className="large-button fs-600 bg-white text-dark uppercase letter-spacing-2">
+        <Link
+          to="/destination"
+          className="large-button fs-600 bg-white text-dark uppercase letter-spacing-2"
+        >
           explore
-        </a>
+        </Link>
       </main>
     </div>
   );
