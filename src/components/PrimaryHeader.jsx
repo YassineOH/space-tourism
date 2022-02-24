@@ -13,7 +13,7 @@ const navMobilePosition = (check) => {
   }
 };
 
-function PrimaryHeader() {
+function PrimaryHeader({ page }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
@@ -35,7 +35,7 @@ function PrimaryHeader() {
           <img src={menu} alt="menu" />
         )}
       </button>
-      <PrimaryNav />
+      <PrimaryNav page={page} />
     </header>
   );
 }

@@ -5,7 +5,7 @@ import "./home.css";
 function Home() {
   return (
     <div className="home">
-      <PrimaryHeader />
+      <PrimaryHeader page="home" />
       <main className="grid grid__container" id="main">
         <div className="content flow">
           <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">

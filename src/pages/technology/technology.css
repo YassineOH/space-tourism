@@ -1,0 +1,114 @@
+.technology {
+  padding-top: 2rem;
+  min-height: 100vh;
+  background-image: url(../../assets/technology/background-technology-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.grid__container--technology {
+  padding-top: 5rem;
+  grid-template-areas:
+    ". title   title ."
+    ". content img   img ";
+  --container-gap: 0rem;
+
+  justify-items: start;
+  align-items: center;
+}
+
+.grid__container--technology > :first-child {
+  margin-bottom: 4rem;
+  grid-area: title;
+  width: 100%;
+}
+
+.grid__container--technology > .technology-content {
+  grid-area: content;
+  align-items: center;
+  --gap: 6rem;
+  --flow-space: 2.5rem;
+}
+
+.grid__container--technology > img {
+  justify-self: end;
+  align-self: center;
+  margin-inline-end: 0;
+  grid-area: img;
+  max-width: 100%;
+}
+
+.grid__container--technology > article {
+  align-self: flex-start;
+  max-width: fit-content;
+}
+
+.grid__container--technology > .technology-content > article > p {
+  max-width: min(80%, 90vw);
+  padding-bottom: 2rem;
+  text-align: justify;
+}
+
+.grid__container--technology > .flex {
+  --gap: 3rem;
+}
+
+@media (max-width: 1370px) {
+  .grid__container--technology {
+    grid-template-areas:
+      " title   title title   title"
+      " content content img  img ";
+    --container-gap: 2rem;
+    padding-inline-start: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .technology {
+    padding-top: 0;
+    background-image: url(../../assets/technology/background-technology-tablet.jpg);
+  }
+
+  .grid__container--technology {
+    justify-items: center;
+    grid-template-areas:
+      "title"
+      "img"
+      "content";
+    padding-inline-start: 0rem;
+  }
+
+  .grid__container--technology > img {
+    padding-inline: 0;
+    margin-inline: 0;
+    width: 100%;
+  }
+
+  .grid__container--technology > .technology-content > article > * {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .grid__container--technology > .technology-content > article > p {
+    max-width: min(70%, 90vw);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .grid__container--technology > .flex {
+    --gap: 3rem;
+    flex-direction: column;
+  }
+
+  .technology-content > .flex {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 576px) {
+  .technology {
+    background-image: url(../../assets/technology/background-technology-mobile.jpg);
+  }
+}

@@ -14,12 +14,12 @@
   min-height: 80vh;
 }
 
-.grid__container > * {
+.home .grid__container > * {
   margin-inline: auto;
   align-items: center;
 }
 
-.grid__container .content {
+.grid__container > .content {
   text-align: justify;
   width: 50%;
 }
@@ -36,6 +36,7 @@
   .grid__container .content {
     text-align: center;
     width: 60%;
+    padding-inline: 0;
   }
 }
 

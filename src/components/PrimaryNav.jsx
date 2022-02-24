@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function PrimaryNav() {
+function PrimaryNav({ page }) {
   return (
     <nav>
       <ul
@@ -8,37 +9,37 @@ function PrimaryNav() {
         id="primary-navigation"
         className="flex primary-navigation underline-indicators"
       >
-        <li className="active">
-          <a
-            href="#"
+        <li className={`${page === "home" && "active"} `}>
+          <Link
+            to="/"
             className="ff-sans-cond text-white uppercase letter-spacing-2"
           >
             <span>00</span>home
-          </a>
+          </Link>
         </li>
-        <li>
-          <a
-            href="#"
+        <li className={`${page === "destination" && "active"} `}>
+          <Link
+            to="/destination"
             className="ff-sans-cond text-white uppercase letter-spacing-2"
           >
             <span>01</span>destination
-          </a>
+          </Link>
         </li>
-        <li>
-          <a
-            href="#"
+        <li className={`${page === "crew" && "active"} `}>
+          <Link
+            to="/crew"
             className="ff-sans-cond text-white uppercase letter-spacing-2"
           >
             <span>02</span>crew
-          </a>
+          </Link>
         </li>
-        <li>
-          <a
-            href="#"
+        <li className={`${page === "technology" && "active"} `}>
+          <Link
+            to="/technology"
             className="ff-sans-cond text-white uppercase letter-spacing-2"
           >
             <span>03</span>technology
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

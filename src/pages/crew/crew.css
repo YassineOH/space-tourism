@@ -1,0 +1,122 @@
+.crew {
+  padding-top: 2rem;
+  min-height: 100vh;
+  background-image: url(../../assets/crew/background-crew-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.grid__container--crew {
+  padding-top: 6rem;
+  grid-template-areas:
+    ". title  title title ."
+    ". article img img ."
+    ". dots img img .";
+  --container-gap: 15rem;
+  justify-items: start;
+  align-items: center;
+}
+
+.grid__container--crew > :first-child {
+  margin-bottom: 4rem;
+  grid-area: title;
+  width: 100%;
+}
+
+.grid__container--crew > :nth-child(3) {
+  padding-bottom: 2rem;
+  grid-area: dots;
+}
+
+.grid__container--crew > img {
+  margin-inline: auto;
+  grid-area: img;
+  align-self: end;
+  max-width: 60%;
+}
+
+.grid__container--crew > article {
+  align-self: flex-start;
+  grid-area: article;
+  max-width: fit-content;
+  width: 150%;
+}
+
+.grid__container--crew > article > h3 {
+  color: hsl(var(--clr-white) / 0.25);
+}
+
+.crew-meta {
+  margin-top: 1rem;
+  --gap: 6rem;
+  justify-content: flex-start;
+}
+
+@media (max-width: 1300px) {
+  .grid__container--crew {
+    --container-gap: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .crew {
+    padding-top: 0;
+    background-image: url(../../assets/crew/background-crew-tablet.jpg);
+  }
+
+  .grid__container--crew {
+    --container-gap: 1rem;
+    justify-items: center;
+    grid-template-areas:
+      "title"
+      "article"
+      "dots"
+      "img ";
+  }
+  .grid__container--crew > * {
+    margin-inline: auto;
+  }
+
+  .grid__container--crew > img {
+    max-width: 100%;
+  }
+
+  .grid__container--crew > article * {
+    margin-inline: auto;
+    text-align: center;
+    max-width: 60%;
+  }
+
+  .crew-meta {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .crew {
+    background-image: url(../../assets/crew/background-crew-mobile.jpg);
+  }
+  .grid__container--crew {
+    --container-gap: 1rem;
+    justify-items: center;
+    grid-template-areas:
+      "title"
+      "img "
+      "dots"
+      "article";
+  }
+
+  .grid__container--crew > article * {
+    max-width: 90%;
+  }
+
+  .grid__container--crew > img {
+    height: 300px;
+  }
+
+  .grid__container--crew > article {
+    padding-bottom: 2rem;
+  }
+}
