@@ -7,4 +7,4 @@ It's demonstrated also as tutorial in [FreeCode Camp Youtube channel](https://ww
 
 The purpose of the tutorial was *how to create a system design* using css.
 
-J'ai relevé ce défi en utilisant React au lieu de créer une page HTML typique.
+I solved this challenge by using React instead of creating a typical HTML page.
